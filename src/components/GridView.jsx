@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-function GridView() {
+function GridView(props) {
   return (
     <React.Fragment>
       <div className="grid-view-header">
@@ -38,143 +38,45 @@ function GridView() {
         </div>
       </div>
       <div className="grid-view">
-        <div className="grid-block">
-          <div className="title-block">
-            <span>
-              <ion-icon name="logo-dribbble"></ion-icon>
-            </span>
-            <h5>Dribble Website</h5>
-            <p>Development</p>
-          </div>
+        {props.data.array.slice(0,4).map((user) => {
+          return (
+            <div className="grid-block" key={user.id}>
+              <div className="title-block">
+                <span>
+                  <ion-icon name="logo-dribbble"></ion-icon>
+                </span>
+                <h5>{user.username}</h5>
+                <p>{user.email}</p>
+              </div>
 
-          <div className="due-block">
-            <span>Due to 14 mar 2019</span>
-          </div>
+              <div className="due-block">
+                <span>Due to 14 mar 2019</span>
+              </div>
 
-          <div className="bottom-block">
-            <div className="task">
-              <span>
-                <strong>20</strong>/45
-              </span>
-              <p>tasks</p>
+              <div className="bottom-block">
+                <div className="task">
+                  <span>
+                    <strong>20</strong>/45
+                  </span>
+                  <p>tasks</p>
+                </div>
+
+                <div className="budget">
+                  <span>$3.2k</span>
+                  <p>budget</p>
+                </div>
+              </div>
+
+              <div className="drop-down">
+                <a href="index.html">
+                  <span>
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                  </span>
+                </a>
+              </div>
             </div>
-
-            <div className="budget">
-              <span>$3.2k</span>
-              <p>budget</p>
-            </div>
-          </div>
-
-          <div className="drop-down">
-            <a href="index.html">
-              <span>
-                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div className="grid-block">
-          <div className="drop-down">
-            <a href="index.html">
-              <span>
-                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-              </span>
-            </a>
-          </div>
-          <div className="title-block">
-            <span>
-              <ion-icon name="logo-dribbble"></ion-icon>
-            </span>
-            <h5>Dribble Website</h5>
-            <p>Development</p>
-          </div>
-
-          <div className="due-block">
-            <span>Due to 14 mar 2019</span>
-          </div>
-
-          <div className="bottom-block">
-            <div className="task">
-              <span>
-                <strong>20</strong>/45
-              </span>
-              <p>tasks</p>
-            </div>
-
-            <div className="budget">
-              <span>$3.2k</span>
-              <p>budget</p>
-            </div>
-          </div>
-        </div>
-        <div className="grid-block">
-          <div className="drop-down">
-            <a href="index.html">
-              <span>
-                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-              </span>
-            </a>
-          </div>
-          <div className="title-block">
-            <span>
-              <ion-icon name="logo-dribbble"></ion-icon>
-            </span>
-            <h5>Dribble Website</h5>
-            <p>Development</p>
-          </div>
-
-          <div className="due-block">
-            <span>Due to 14 mar 2019</span>
-          </div>
-
-          <div className="bottom-block">
-            <div className="task">
-              <span>
-                <strong>20</strong>/45
-              </span>
-              <p>tasks</p>
-            </div>
-
-            <div className="budget">
-              <span>$3.2k</span>
-              <p>budget</p>
-            </div>
-          </div>
-        </div>
-        <div className="grid-block">
-          <div className="drop-down">
-            <a href="index.html">
-              <span>
-                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-              </span>
-            </a>
-          </div>
-          <div className="title-block">
-            <span>
-              <ion-icon name="logo-dribbble"></ion-icon>
-            </span>
-            <h5>Dribble Website</h5>
-            <p>Development</p>
-          </div>
-
-          <div className="due-block">
-            <span>Due to 14 mar 2019</span>
-          </div>
-
-          <div className="bottom-block">
-            <div className="task">
-              <span>
-                <strong>20</strong>/45
-              </span>
-              <p>tasks</p>
-            </div>
-
-            <div className="budget">
-              <span>$3.2k</span>
-              <p>budget</p>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
       <div className="gridview-pagination">
         <div className="items-page">
@@ -196,12 +98,12 @@ function GridView() {
           </div>
           <ul className="grid-view-ul">
             <li>
-              <a href="index.html">1</a>
+              <a href="index.html" className="active">
+                1
+              </a>
             </li>
             <li>
-              <a href="index.html" className="active">
-                2
-              </a>
+              <a href="index.html">2</a>
             </li>
             <li>
               <a href="index.html">3</a>

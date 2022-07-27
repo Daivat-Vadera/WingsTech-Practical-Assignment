@@ -1,6 +1,9 @@
 import React from "react";
 
-function ListView() {
+function ListView(props) {
+  // function handleDeleteClick(){
+  //   props.handleClick()
+  // }
   return (
     <React.Fragment>
       <div className="table-responsive list-table">
@@ -55,152 +58,90 @@ function ListView() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td scope="row">
-                <div className="list-icon-flex">
-                  <div className="d-flex">
-                    <div className="flex-shrink-0 list-flex-icon">
-                      <a href="index.html">
-                        <span>
-                          <ion-icon name="logo-dribbble"></ion-icon>
-                        </span>
-                      </a>
+            {props.data.array.slice(0, 4).map((user) => {
+              return (
+                <tr key={user.id}>
+                  <td scope="row">
+                    <div className="list-icon-flex">
+                      <div className="d-flex">
+                        <div className="flex-shrink-0 list-flex-icon">
+                          <a href="index.html">
+                            <span>
+                              <ion-icon name="logo-dribbble"></ion-icon>
+                            </span>
+                          </a>
+                        </div>
+                        <div className="flex-grow-1 ms-3 list-flex-text">
+                          <h5 className="inactive-title">{user.username}</h5>
+                          <p>{user.email}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex-grow-1 ms-3 list-flex-text">
-                      <h5 className="inactive-title">Dribble Website</h5>
-                      <p>Development</p>
+                  </td>
+                  <td>
+                    <div className="members-list">
+                      <ul>
+                        <li>
+                          <a href="index.html">
+                            <img src="./img/person-1.png" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="index.html">
+                            <img src="./img/person-2.png" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="index.html">
+                            <img src="./img/person-3.png" alt="" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="index.html">
+                            {" "}
+                            <span>+5</span>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div className="members-list">
-                  <ul>
-                    <li>
-                      <a href="index.html">
-                        <img src="./img/person-1.png" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <img src="./img/person-2.png" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <img src="./img/person-3.png" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
+                  </td>
+                  <td>
+                    <div className="task-count">
+                      <span>
                         {" "}
-                        <span>+5</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-              <td>
-                <div className="task-count">
-                  <span>
-                    {" "}
-                    <strong>90</strong>/148
-                  </span>
-                  <p>tasks</p>
-                </div>
-              </td>
-              <td>
-                <div className="date-badges">
-                  <span className="badge-sm badge-primary">development</span>
-                  <span className="badge-sm badge-muted">24 feb 2019</span>
-                </div>
-              </td>
-              <td>
-                <div
-                  className="form-check form-switch form-switch-md"
-                  dir="ltr"
-                >
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="SwitchCheckSizemd"
-                  />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">
-                <div className="list-icon-flex">
-                  <div className="d-flex">
-                    <div className="flex-shrink-0 list-flex-icon">
-                      <a href="index.html">
-                        <span>
-                          <ion-icon name="logo-dribbble"></ion-icon>
-                        </span>
-                      </a>
+                        <strong>90</strong>/148
+                      </span>
+                      <p>tasks</p>
                     </div>
-                    <div className="flex-grow-1 ms-3 list-flex-text">
-                      <h5>Dribble Website</h5>
-                      <p>Development</p>
+                  </td>
+                  <td>
+                    <div className="date-badges">
+                      <span className="badge-sm badge-primary">
+                        development
+                      </span>
+                      <span className="badge-sm badge-muted">24 feb 2019</span>
                     </div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div className="members-list">
-                  <ul>
-                    <li>
-                      <a href="index.html">
-                        <img src="./img/person-1.png" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <img src="./img/person-2.png" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <img src="./img/person-3.png" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        {" "}
-                        <span>+5</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-              <td>
-                <div className="task-count">
-                  <span>
-                    {" "}
-                    <strong>90</strong>/148
-                  </span>
-                  <p>tasks</p>
-                </div>
-              </td>
-              <td>
-                <div className="date-badges">
-                  <span className="badge-sm badge-primary">development</span>
-                  <span className="badge-sm badge-muted">24 feb 2019</span>
-                </div>
-              </td>
-              <td>
-                <div
-                  className="form-check form-switch form-switch-md"
-                  dir="ltr"
-                >
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="SwitchCheckSizemd"
-                  />
-                </div>
-              </td>
-            </tr>
+                  </td>
+                  <td>
+                    <div
+                      className="form-check form-switch form-switch-md"
+                      dir="ltr"
+                    >
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        id="SwitchCheckSizemd"
+                      />
+                    </div>
+
+                    <i
+                      onClick={() => props.handleClick(user.username)}
+                      className="fa-solid fa-circle-trash"
+                    ></i>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -214,15 +155,15 @@ function ListView() {
         </div>
         <ul>
           <li>
-            <a href="index.html">1</a>
+            <a href="index.html" className="active">
+              1
+            </a>
           </li>
           <li>
             <a href="index.html">2</a>
           </li>
           <li>
-            <a href="index.html" className="active">
-              3
-            </a>
+            <a href="index.html">3</a>
           </li>
           <li>
             <a href="index.html">4</a>
