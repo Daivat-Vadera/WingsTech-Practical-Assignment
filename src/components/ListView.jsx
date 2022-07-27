@@ -58,7 +58,7 @@ function ListView(props) {
             </tr>
           </thead>
           <tbody>
-            {props.data.array.slice(0, 4).map((user) => {
+            {props.data.array.map((user) => {
               return (
                 <tr key={user.id}>
                   <td scope="row">
