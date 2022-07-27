@@ -38,7 +38,7 @@ function GridView(props) {
         </div>
       </div>
       <div className="grid-view">
-        {props.data.array.slice(0,4).map((user) => {
+        {props.data.array.map((user) => {
           return (
             <div className="grid-block" key={user.id}>
               <div className="title-block">
